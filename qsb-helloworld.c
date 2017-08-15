@@ -1,5 +1,5 @@
 /****
-This project is used for getting streamming data from a USB-to_Serial adapter, 
+This project is used for getting streaming data from a USB-to_Serial adapter, 
 and also you can use it to set up the values of the relevant registers.
 
 Created by Mengbin Min (Mike) based on the support from US Digital.
