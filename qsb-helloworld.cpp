@@ -1,6 +1,8 @@
 /****
 This project is used for getting streaming data from a USB-to_Serial adapter, 
-and also you can use it to set up the values of the relevant registers.
+and also you can use it to set up the values of the relevant registers.It has
+been tested on Ubuntu 16.04 64 bit.
+
 Created by Mengbin Min (Mike) based on the support from US Digital.
 Contact: msner10010@hotmail.com    16/08/2017
 
