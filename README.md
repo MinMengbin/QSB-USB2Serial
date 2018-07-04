@@ -1,7 +1,11 @@
 # QSB-USB2Serial_US-digital
 This project is used for getting streaming data from US Digital USB-to-Serial adapter.
 
-# How to solve multiple USB devices plugged in the same computer
+# How to solve the problem of not knowing the names of usb devices when multiple USB devices are plugged in the same computer?
+
+The solution is writing dev rules to assign names for individuals. As we know, every QSB-adapter has its own serial number, which you can find on the front part of the black adapter. For my case, I have two QSB0-adapters. One has the serial number of 81830, another one has the serial number of 81658. I will use this attribute (ATTRS{serial}) to assign names to this two adpaters.
+
+First, run udevadm to have a look at usb devices details
 
 $ udevadm info -a -n /dev/ttyUSB0
 
@@ -130,3 +134,14 @@ $ udevadm info -a -n /dev/ttyUSB0
               KERNELS=="pci0000:00"
               SUBSYSTEMS==""
               DRIVERS==""
+Then you will see one line below from the printed results.
+
+                    ATTRS{serial}=="81830"
+Go to 
+
+add 
+
+          #This rule file is used to assign names for qsb adapter from USdigital 
+
+          KERNELS=="1-8",SUBSYSTEMS=="usb",ATTRS{serial}=="81830",NAME="qsb81830"
+          KERNELS=="1-8",SUBSYSTEMS=="usb",ATTRS{serial}=="81658",NAME="qsb81658"
