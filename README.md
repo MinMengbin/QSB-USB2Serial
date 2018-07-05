@@ -3,10 +3,13 @@ This project is used for getting streaming data from US Digital USB-to-Serial ad
 
 # How to solve the problem of not knowing the names of usb devices when multiple USB devices are plugged in the same computer?
 
-The easiest way is to 
+The easiest way is using the device names from /dev folder. After plugging the USB adapters, it will automatically generate a serial name for it which you can find it under the /dev/serial/by-id shown as below
 
+          /dev/serial/by-id/usb-US_Digital_USB__-__QSB_81658-if00-port0
 
-The solution is writing dev rules to assign names for individuals. As we know, every QSB-adapter has its own serial number, which you can find on the front part of the black adapter. For my case, I have two QSB0-adapters. One has the serial number of 81830, another one has the serial number of 81658. I will use this attribute (ATTRS{serial}) to assign names to this two adpaters.
+I tried to write dev rules which was redundant, because every device had its own constant name as shown above. I also came accross some issues such as when i was appling dev rules. It did not work at the end. Below is some
+
+Writing dev rules to assign names for individuals. As we know, every QSB-adapter has its own serial number, which you can find on the front part of the black adapter. For my case, I have two QSB0-adapters. One has the serial number of 81830, another one has the serial number of 81658. I will use this attribute (ATTRS{serial}) to assign names to this two adpaters.
 
 First, run udevadm to have a look at usb devices details
 
@@ -18,7 +21,7 @@ $ udevadm info -a -n /dev/ttyUSB0
           A rule to match, can be composed by the attributes of the device
           and the attributes from one single parent device.
 
-            looking at device '/devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.0/ttyUSB0/tty/ttyUSB0':
+            looking at device '':
               KERNEL=="ttyUSB0"
               SUBSYSTEM=="tty"
               DRIVER==""
@@ -140,7 +143,7 @@ $ udevadm info -a -n /dev/ttyUSB0
 Then you will see one line below from the printed results.
 
                     ATTRS{serial}=="81830"
-Go to 
+Go to directory of 
 
 add 
 
@@ -148,4 +151,8 @@ add
 
           KERNELS=="1-8",SUBSYSTEMS=="usb",ATTRS{serial}=="81830",NAME="qsb81830"
           KERNELS=="1-8",SUBSYSTEMS=="usb",ATTRS{serial}=="81658",NAME="qsb81658"
+test your rules, you can run 
 
+          udevadm control --repload-rules
+          udevadm test /dev/serial/by-id/usb-US_Digital_USB__-__QSB_81658-if00-port0
+For my case, it did not work due to permission issues. So you should just use the names as shown under the foler of /dev/serial/by-id/. 
