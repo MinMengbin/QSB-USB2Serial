@@ -160,5 +160,6 @@ test your rules, you can run
 For my case, it did not work due to permission issues. So you should just use the names as shown under the foler of /dev/serial/by-id/. 
 
 
-#reference:
+# reference:
+
 Udev Wiki from Archlinux https://wiki.archlinux.org/index.php/udev
