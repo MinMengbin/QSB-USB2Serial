@@ -159,7 +159,27 @@ test your rules, you can run
 
           udevadm control --repload-rules
           udevadm test /dev/serial/by-id/usb-US_Digital_USB__-__QSB_81658-if00-port0
-For my case, it did not work due to permission issues. So you should just use the names as shown under the foler of /dev/serial/by-id/. 
+Due to permission issues, I could not change NAME.Instead i use SYMLINK.
+
+(https://askubuntu.com/questions/920098/udev-rules-name-variable-not-working)
+You can't rename a device node by assigning to the NAME key in udev rules. At least not in systemd udev. Only a network device name can be changed. From the udev manual:
+
+          NAME
+                 The name to use for a network interface. See
+                 systemd.link(5) for a higher-level mechanism
+                 for setting the interface name. The name of a
+                 device node cannot be changed by udev, only
+                 additional symlinks can be created.
+
+So change the rules file contents into 
+          #This rule file is used to assign names for qsb adapter from USdigital
+
+          ATTRS{serial}=="81830",SYMLINK+="ttyUSB830"
+          ATTRS{serial}=="81658",SYMLINK+="ttyUSB658"
+
+Then it worked as shown below, which you can see two new device name as ttyUSB830 and ttyUSB658.
+
+Otherwise, you just use the names as shown under the foler of /dev/serial/by-id/.
 
 
 # reference:
