@@ -7,6 +7,8 @@ The easiest way is using the device names from /dev folder. After plugging the U
 
           /dev/serial/by-id/usb-US_Digital_USB__-__QSB_81658-if00-port0
 
+QSB_81658 will eventurally a unique name for that USB device.
+
 I tried to write dev rules which was redundant, because every device had its own constant name as shown above. I also came accross some issues such as when i was appling dev rules. It did not work at the end. Below is some
 
 Writing dev rules to assign names for individuals. As we know, every QSB-adapter has its own serial number, which you can find on the front part of the black adapter. For my case, I have two QSB0-adapters. One has the serial number of 81830, another one has the serial number of 81658. I will use this attribute (ATTRS{serial}) to assign names to this two adpaters.
