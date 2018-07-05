@@ -3,6 +3,9 @@ This project is used for getting streaming data from US Digital USB-to-Serial ad
 
 # How to solve the problem of not knowing the names of usb devices when multiple USB devices are plugged in the same computer?
 
+The easiest way is to 
+
+
 The solution is writing dev rules to assign names for individuals. As we know, every QSB-adapter has its own serial number, which you can find on the front part of the black adapter. For my case, I have two QSB0-adapters. One has the serial number of 81830, another one has the serial number of 81658. I will use this attribute (ATTRS{serial}) to assign names to this two adpaters.
 
 First, run udevadm to have a look at usb devices details
@@ -145,3 +148,4 @@ add
 
           KERNELS=="1-8",SUBSYSTEMS=="usb",ATTRS{serial}=="81830",NAME="qsb81830"
           KERNELS=="1-8",SUBSYSTEMS=="usb",ATTRS{serial}=="81658",NAME="qsb81658"
+
