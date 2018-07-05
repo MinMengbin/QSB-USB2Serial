@@ -178,7 +178,7 @@ So change the rules file contents into
           ATTRS{serial}=="81658",SYMLINK+="ttyUSB658"
 
 Then it worked as shown below, which you can see two new device name as ttyUSB830 and ttyUSB658.
-
+https://i.stack.imgur.com/MPCSt.png
 Otherwise, you just use the names as shown under the foler of /dev/serial/by-id/.
 
 
