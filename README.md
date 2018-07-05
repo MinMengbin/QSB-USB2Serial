@@ -143,12 +143,14 @@ $ udevadm info -a -n /dev/ttyUSB0
 Then you will see one line below from the printed results.
 
                     ATTRS{serial}=="81830"
-Go to directory of 
+Go to directory of /etc/udev/rules.d/
 
-add 
+Add 990-usdigital-qsbadapter.rules by using command 
+
+          sudo nano 990-usdigital-qsbadapter.rules
+Then put the followings into the file
 
           #This rule file is used to assign names for qsb adapter from USdigital 
-
           KERNELS=="1-8",SUBSYSTEMS=="usb",ATTRS{serial}=="81830",NAME="qsb81830"
           KERNELS=="1-8",SUBSYSTEMS=="usb",ATTRS{serial}=="81658",NAME="qsb81658"
 test your rules, you can run 
@@ -156,3 +158,7 @@ test your rules, you can run
           udevadm control --repload-rules
           udevadm test /dev/serial/by-id/usb-US_Digital_USB__-__QSB_81658-if00-port0
 For my case, it did not work due to permission issues. So you should just use the names as shown under the foler of /dev/serial/by-id/. 
+
+
+#reference:
+Udev Wiki from Archlinux https://wiki.archlinux.org/index.php/udev
