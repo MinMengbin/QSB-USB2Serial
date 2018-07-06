@@ -174,10 +174,10 @@ You can't rename a device node by assigning to the NAME key in udev rules. At le
 So change the rules file contents into 
           #This rule file is used to assign names for qsb adapter from USdigital
 
-          ATTRS{serial}=="81830",SYMLINK+="ttyUSB830"
-          ATTRS{serial}=="81658",SYMLINK+="ttyUSB658"
+          ATTRS{serial}=="81830",SYMLINK+="QSB830"
+          ATTRS{serial}=="81658",SYMLINK+="QSB658"
 
-Then it worked as shown below, which you can see two new device name as ttyUSB830 and ttyUSB658.
+Then it worked as shown below, which you can see two new device name as QSB830 and QSB658.
 https://i.stack.imgur.com/MPCSt.png
 Otherwise, you just use the names as shown under the foler of /dev/serial/by-id/.
 
