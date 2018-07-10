@@ -7,7 +7,7 @@ This project is used for getting streaming data from US Digital USB-to-Serial ad
 
 Direct to usb_Udev_rules_change_names
 
-# How to set up registers values of these the QSB adapters?
+# How to set up registers values of these QSB adapters?
           streaming_data_setup.cpp
     
 gcc streaming_data_setup.cpp -o streamingdatasetup
