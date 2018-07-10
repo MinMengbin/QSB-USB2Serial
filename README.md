@@ -1,4 +1,4 @@
-# How to use
+# How to use?
 
 # QSB-USB2Serial_US-digital
 This project is used for getting streaming data from US Digital USB-to-Serial adapter.
