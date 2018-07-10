@@ -1,6 +1,3 @@
-# QSB-USB2Serial_US-digital
-This project is used for getting streaming data from US Digital USB-to-Serial adapter.
-
 # How to solve the problem of not knowing the names of usb devices when multiple USB devices are plugged in the same computer?
 
 The easiest way is using the device names from /dev folder. After plugging the USB adapters, it will automatically generate a serial name for it which you can find it under the /dev/serial/by-id shown as below
