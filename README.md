@@ -24,9 +24,9 @@ rosrun encoder_data encoder_node
 
 rostopic list:
 
-std_msgs::UInt32 encoderl_data 
+std_msgs::UInt32 encoderl_data
 
-std_msgs::Float32 speed
+std_msgs::Float32 speed   (this is the rotation speed)
 
 
 # Reference C/C++ Coding
