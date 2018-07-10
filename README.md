@@ -16,7 +16,18 @@ gcc streaming_data_setup.cpp -o streamingdatasetup
 
 # ROSpackage
 
-rosrun 
+Add these files into ros workspace /src folder then catkin_make, add this package
+
+roscore
+
+rosrun encoder_data encoder_node 
+
+rostopic list:
+
+std_msgs::UInt32 encoderl_data 
+
+std_msgs::Float32 speed
+
 
 # Reference C/C++ Coding
           qsb-helloworld.c
