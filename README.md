@@ -2,6 +2,7 @@ This project is used for getting streaming data from US Digital USB-to-Serial ad
 
 # How to use QSB-USB2Serial_US-digital?
 
+User manual about QSB from US digital, please go to official web site
 
 # How to solve the problem of not knowing the names of usb devices when multiple USB devices are plugged in the same computer?
 
