@@ -16,18 +16,22 @@ gcc streaming_data_setup.cpp -o streamingdatasetup
 
 # ROSpackage
 
-Add these files into ros workspace /src folder then catkin_make, add this package
+Add folder /encoder_data into your ros workspace /src folder then catkin_make, add this package
 
 roscore
 
 rosrun encoder_data encoder_node 
 
-rostopic list:
+rostopic list: encoderl
 
-std_msgs::UInt32 encoderl_data
-
-std_msgs::Float32 speed   (this is the rotation speed)
-
+header: 
+  seq: 611873
+  stamp: 
+    secs: 1531357195
+    nsecs: 265082307
+  frame_id: "/dev/QSB830"
+val_encoder: 333359
+val_speed: 0.0
 
 # Reference C/C++ Coding
           qsb-helloworld.c
