@@ -33,6 +33,8 @@ rostopic list: encoderl
           val_encoder: 333359
           val_speed: 0.0
 
+Test Video: https://youtu.be/QE1XKatoCH8
+
 # Reference C/C++ Coding
           qsb-helloworld.c
           qsb-helloworld.cpp
