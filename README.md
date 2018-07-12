@@ -24,14 +24,22 @@ rosrun encoder_data encoder_node
 
 rostopic list: encoderl
 
-header: 
+header:
+
   seq: 611873
+  
   stamp: 
+  
     secs: 1531357195
+    
     nsecs: 265082307
+    
   frame_id: "/dev/QSB830"
+  
 val_encoder: 333359
+
 val_speed: 0.0
+
 
 # Reference C/C++ Coding
           qsb-helloworld.c
